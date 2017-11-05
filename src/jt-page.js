@@ -76,6 +76,7 @@ export function createPage(pageName) {
     }
 
     log('创建完成');
+    log(`pages/${pageName}/${pageName}`)
   } catch (error) {
     warn('创建失败');
     warn(error);
