@@ -46,14 +46,36 @@ commander.version('1.0.0')
 
 commander.parse(process.argv);
 
-if (isFileExit(path.join(__dirname, '../test/template'))) {
-  Git.Repository.open(path.join(__dirname, '../test')).then((repository) => {
-    repository.fetch('https://github.com/wulunyi/jt-cli.git').then(() => {
-      console.log('更新成功');
-    });
-  });
-} else {
-  Git.Clone('https://github.com/wulunyi/jt-cli.git', path.join(__dirname, '../test')).then(function(repository) {
-    console.log('clone success');
-  });
-}
+// 从 git 中获取数据
+// let gitFilePath = path.join(__dirname, '../test');
+// let repository;
+
+// if (isFileExit(path.join(__dirname, '../test/template'))) {
+//   // 更新
+//   Git.Repository.open(gitFilePath)
+//   .then((repo) => {
+//     repository = repo;
+
+//     return repository.fetchAll({
+//       callbacks: {
+//         credentials: function(url, userName) {
+//           return Git.Cred.sshKeyFromAgent(userName);
+//         },
+//         certificateCheck: function() {
+//           return 1;
+//         }
+//       }
+//     });
+//   })
+//   .then(() => {
+//     return repository.mergeBranches("master", "origin/master");
+//   })
+//   .done(function() {
+//     console.log("Done!");
+//   });
+// } else {
+//   // clone
+//   Git.Clone('https://github.com/wulunyi/jt-cli.git', gitFilePath).then(function(repository) {
+//     console.log('clone success');
+//   });
+// }
