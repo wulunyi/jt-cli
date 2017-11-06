@@ -4,6 +4,12 @@ import {createPage} from './jt-page';
 import {createCom} from './jt-com';
 import createProject from './jt-project';
 import _ from 'lodash';
+import Git from 'nodegit';
+import path from 'path';
+import {
+  isFileExit,
+  camelName
+} from './util';
 
 // 执行命令的路径
 let cwdPath = process.cwd();
@@ -39,3 +45,15 @@ commander.version('1.0.0')
   });
 
 commander.parse(process.argv);
+
+if (isFileExit(path.join(__dirname, '../test/template'))) {
+  Git.Repository.open(path.join(__dirname, '../test')).then((repository) => {
+    repository.fetch('https://github.com/wulunyi/jt-cli.git').then(() => {
+      console.log('更新成功');
+    });
+  });
+} else {
+  Git.Clone('https://github.com/wulunyi/jt-cli.git', path.join(__dirname, '../test')).then(function(repository) {
+    console.log('clone success');
+  });
+}
