@@ -11,7 +11,7 @@
   export default class extends wepy.app {
     config = {
       pages: [
-        'pages/index',
+        'pages/index/index',
 			  //path
       ],
       window: {
@@ -21,20 +21,20 @@
         navigationBarTextStyle: '#fff',
         backgroundColor: '#f4f4f4'
       },
-      tabBar: {
-        backgroundColor: '#ffffff',
-        selectedColor: '#FF835A',
-        color: '#5D5D5D',
-        borderStyle: 'white',
-        list: [
-          // {
-          //   'pagePath': 'pages/index/index',
-          //   'text': '首页',
-          //   'iconPath': 'images/tab/tab_home@2x.png',
-          //   'selectedIconPath': 'images/tab/tab_hover_home@2x.png'
-          // }
-        ]
-      }
+      // tabBar: {
+      //   backgroundColor: '#ffffff',
+      //   selectedColor: '#FF835A',
+      //   color: '#5D5D5D',
+      //   borderStyle: 'white',
+      //   list: [
+      //     // {
+      //     //   'pagePath': 'pages/index/index',
+      //     //   'text': '首页',
+      //     //   'iconPath': 'images/tab/tab_home@2x.png',
+      //     //   'selectedIconPath': 'images/tab/tab_hover_home@2x.png'
+      //     // }
+      //   ]
+      // }
     }
 
     globalData = initData;

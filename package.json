@@ -1,6 +1,6 @@
 {
-  "name": "jt-cli",
-  "version": "1.0.0",
+  "name": "@jt/jt-cli",
+  "version": "1.0.4",
   "main": "bin/jt.js",
   "bin": {
     "jt": "bin/jt.js"
