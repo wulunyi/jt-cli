@@ -45,6 +45,24 @@ export function createPage(pageName) {
       }))
       .pipe(gulp.dest(filePath));
 
+    log('正在拷贝 wxml 文件');
+    
+    gulp.src(path.resolve(curPath, '../template/page/tp.wxml'))
+      .pipe(rename({
+        basename: pageName,
+        extname: '.wxml'
+      }))
+      .pipe(gulp.dest(filePath));
+    
+    log('正在拷贝 js 文件');
+    
+    gulp.src(path.resolve(curPath, '../template/page/tp.js'))
+      .pipe(rename({
+        basename: pageName,
+        extname: '.js'
+      }))
+      .pipe(gulp.dest(filePath));
+    
     log('正在拷贝 data 文件');
 
     gulp.src(path.resolve(curPath, '../template/page/data.js'))
