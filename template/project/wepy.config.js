@@ -3,20 +3,25 @@ var prod = process.env.NODE_ENV === 'production'
 
 module.exports = {
   wpyExt: '.wpy',
+  cliLogs: true,
+  eslint: true,
   build: {
     web: {
       htmlTemplate: path.join('src', 'index.template.html'),
       htmlOutput: path.join('web', 'index.html'),
-      jsOutput: path.join('web', 'index.js')
+      jsOutput: path.join('web', 'index.js'),
+      resolve: {
+        aliasFields: ['browser']
+      }
     }
   },
   resolve: {
     alias: {
-      counter: path.join(__dirname, 'src/components/counter')
+      // counter: path.join(__dirname, 'src/components/counter')
     },
+    aliasFields: ['wepy', 'weapp'],
     modules: ['node_modules']
   },
-  eslint: true,
   compilers: {
     pug: {
       pretty: true
@@ -36,7 +41,11 @@ module.exports = {
         'babel-plugin-transform-class-properties',
         'transform-decorators-legacy',
         'transform-export-extensions',
-        'syntax-export-extensions'
+        'syntax-export-extensions',
+        // 'transform-class-properties',
+        // 'transform-decorators-legacy',
+        // 'transform-object-rest-spread',
+        // 'transform-export-extensions'
       ]
     }
   },
@@ -72,6 +81,12 @@ if (prod) {
         png: {
           quality: 80
         }
+      }
+    },
+    autoprefixer: {
+      filter: /\.(wxss|css)$/,
+      config: {
+        browsers: ['last 11 iOS versions']
       }
     }
   }

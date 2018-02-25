@@ -7,7 +7,6 @@ import {
 import * as util from './util';
 
 export default function createProject(name) {
-  debugger;
   let inPlace = !name || name === '.';
 
   if (inPlace) {
@@ -57,6 +56,7 @@ export default function createProject(name) {
     "wepy-compiler-sass",
     "wepy-plugin-imagemin",
     "wepy-plugin-uglifyjs",
+    'wepy-plugin-autoprefixer',
     'babel-plugin-transform-decorators-legacy',
     'babel-plugin-syntax-export-extensions',
     'babel-plugin-transform-export-extensions',
