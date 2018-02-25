@@ -2,7 +2,7 @@
  * page 层公用 mixin
  */
 import wepy from 'wepy';
-import deepClone from '../utils/deep-clone';
+import deepClone from 'clone';
 
 export default class extends wepy.mixin {
 
@@ -41,9 +41,12 @@ export default class extends wepy.mixin {
    * @param {*} params
    */
   navigateTo(...params) {
-    let len = getCurrentPages().length;
+    const len = getCurrentPages().length;
 
-    if (len < 5) {
+    const navigate = (this.$navigate || this.$root.$navigate).bind(this);
+    const redirect = (this.$redirect || this.$root.$redirect).bind(this);
+
+    if (len < 10) {
       this.$navigate(...params);
     } else {
       this.$redirect(...params);

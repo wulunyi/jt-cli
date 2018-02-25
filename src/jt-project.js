@@ -45,6 +45,7 @@ export default function createProject(name) {
   let dependencies = [
     'wepy',
     "lodash",
+    'clone',
     "promise-polyfill",
     "wepy-async-function"
   ];
