@@ -38,14 +38,11 @@ module.exports = {
         'env'
       ],
       plugins: [
-        'babel-plugin-transform-class-properties',
+        'transform-class-properties',
         'transform-decorators-legacy',
         'transform-export-extensions',
         'syntax-export-extensions',
-        // 'transform-class-properties',
-        // 'transform-decorators-legacy',
-        // 'transform-object-rest-spread',
-        // 'transform-export-extensions'
+        'transform-object-rest-spread',
       ]
     }
   },

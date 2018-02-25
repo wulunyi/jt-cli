@@ -18,7 +18,7 @@ let cwdPath = process.cwd();
 // 当前 jt-cli 的路径
 let curPath = __dirname;
 
-commander.version('1.0.4');
+commander.version('1.0.6');
 
 commander.command('new <action> <name>').action(function (action, name) {
   if (!_.isString(action) || !_.isString(name)) {

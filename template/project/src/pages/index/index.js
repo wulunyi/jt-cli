@@ -1,7 +1,7 @@
 import wepy from 'wepy';
-import deepClone from '../../utils/deep-clone';
+import deepClone from 'clone';
 import pageBaseMixin from '../../mixins/page-base-mixin.js';
-import * as initData from './data.js';
+import initData from './data.js';
 
 export default class Index extends wepy.page {
   config = {

@@ -62,6 +62,7 @@ export default function createProject(name) {
     'babel-plugin-syntax-export-extensions',
     'babel-plugin-transform-export-extensions',
     'babel-plugin-transform-class-properties',
+    'babel-plugin-transform-object-rest-spread',
     'babel-preset-env',
     'cross-env'
   ];

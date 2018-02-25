@@ -2,13 +2,13 @@ import wepy from 'wepy';
 import 'wepy-async-function';
 import 'promise-polyfill';
 import initGlobalData from './globaldata.js';
-import _ from 'lodash';
+// import _ from 'lodash';
 
 export default class extends wepy.app {
   config = {
     pages: [
-      'pages/index/index',
-      //path
+      'pages/index/index'
+      // path
     ],
     window: {
       backgroundTextStyle: 'light',
